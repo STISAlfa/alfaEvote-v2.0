@@ -8,9 +8,18 @@ All Right Reserved
 Copyright 2014 TGS
 -->
 <head>
-	<title>PEMIRA STIS</title>
+	<link rel="icon" type="image/png" href="/img/favicon.png" />]
+	<title>PEMIRA STIS 2016-2017</title>
 </head>
 
 <body>
-	{{> login}}
+	{{#if sudahLogin}}
+        {{#if sudahVoting}}
+        	{{> thanks}}
+        {{else}}
+        	{{> voting}}
+        {{/if}}
+    {{else }}
+    	{{> login}}
+    {{/if}}
 </body>
