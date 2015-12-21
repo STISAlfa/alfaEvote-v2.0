@@ -1,1 +1,67 @@
-/* CSS declarations go here */
+/* 
+    Created on : Nov 5, 2014, 12:24:26 AM
+    Author     : Thosan Girisona S
+*/
+body{
+    background-image: url(/img/footer_lodyas.png);
+    margin-left: 4%;
+}
+
+.kotakcalon{
+    color: #666666;
+    background-color: #666666;
+}
+
+.kotakcalon img:hover{
+    opacity: 0.8;
+}
+
+.kotakcalon img{
+    width: 128px;
+}
+
+.kotakcalon button{
+    margin-top: 3%;
+}
+
+
+#container2{
+    color : white;
+    text-align: center;
+}
+
+label > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+label > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
+  border:2px solid #f00;
+}
+
+#container2 form{
+    margin-top: 2%;
+}
+
+#containers{
+    margin-top: 10%;
+}
+
+
+#iconlog{
+    float: left;
+    clear: both;
+}
+
+#foter{
+    color: white;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+#formuser{
+    margin-bottom: 10px;
+}
