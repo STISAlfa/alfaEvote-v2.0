@@ -13,13 +13,5 @@ Copyright 2014 TGS
 </head>
 
 <body>
-	{{#if sudahLogin}}
-        {{#if sudahVoting}}
-        	{{> thanks}}
-        {{else}}
-        	{{> voting}}
-        {{/if}}
-    {{else }}
-    	{{> login}}
-    {{/if}}
+    {{> login}}
 </body>
