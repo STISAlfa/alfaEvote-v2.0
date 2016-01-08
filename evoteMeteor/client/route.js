@@ -9,7 +9,8 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/voting', function () {
+FlowRouter.route('/voting', {
+  action:function () {
      if (Session.get('user')) {
        var sema     = CalonSema.find();
        var angkatan = CalonAngkatan.find({angkatan: Session.get('user')[0]});
@@ -19,6 +20,7 @@ FlowRouter.route('/voting', function () {
           footer: "footer"});
      }
      else {
-       Route.go('/');
-     }
+       FlowRouter.go('/');
+     };
+  }
 });
