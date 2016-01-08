@@ -1,26 +1,22 @@
 FlowRouter.route('/', {
-  action: function() {
+  name:'home',
+  action() {
     Session.setDefault('sudahVoting', false);
     Session.setDefault('sudahLogin', false);
-    BlazeLayout.render("Main", {
-      header: "header",
-      content: "login",
-      footer: "footer"});
+    BlazeLayout.render("Main", {content: "loginM"});
   }
 });
 
-FlowRouter.route('/voting', {
-  action:function () {
+FlowRouter.route('/vote', {
+  name: 'vote',
+  action() {
      if (Session.get('user')) {
        var sema     = CalonSema.find();
        var angkatan = CalonAngkatan.find({angkatan: Session.get('user')[0]});
-       BlazeLayout.render("Main", {
-          header: "header",
-          content: "voting",
-          footer: "footer"});
+       BlazeLayout.render("Main", {content: "voting"});
      }
      else {
-       FlowRouter.go('/');
+       FlowRouter.go('home');
      };
   }
 });

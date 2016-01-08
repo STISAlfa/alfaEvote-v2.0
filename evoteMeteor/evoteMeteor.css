@@ -3,8 +3,7 @@
     Author     : Thosan Girisona S
 */
 body{
-    background-image: url(	/img/footer_lodyas.png);
-    margin-left: 4%;
+    background-image: url('/img/footer_lodyas.png');
 }
 
 .kotakcalon{
@@ -24,7 +23,6 @@ body{
     margin-top: 3%;
 }
 
-
 #container2{
     color : white;
     text-align: center;
@@ -43,10 +41,18 @@ label > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
     margin-top: 2%;
 }
 
-#containers{
-    margin-top: 10%;
+#setis-p{
+    font-weight: 100;
 }
 
+#evote-p{
+    font-style: bold;
+    font-weight: 900;
+}
+
+#login-page{
+    margin-top: 10%;
+}
 
 #iconlog{
     float: left;
