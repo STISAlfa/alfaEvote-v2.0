@@ -24,4 +24,5 @@ kadira:flow-router
 kadira:blaze-layout
 materialize:materialize
 meteortoys:allthings
-matb33:bootstrap-glyphicons
+#matb33:bootstrap-glyphicons
+check

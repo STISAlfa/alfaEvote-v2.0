@@ -8,7 +8,8 @@ All Right Reserved
 Copyright 2016 TGS
 -->
 <template name="voting">
-	<div class="span12" id="container2">
+    {{#if Template.subscriptionsReady}}
+        <div class="span12" id="container2">
                 <form role="form" method="post" action="validate.php">
                     <div><h1 class="panel-heading" > Calon Ketua SEMA STIS</h1><hr></div>
 
@@ -65,56 +66,6 @@ Copyright 2016 TGS
                                 </div> 
                             </div>
                     </label>
-                
-                    <label class="radio-inline">
-                        <input type="radio" id="sema" name="sema" value="sema2"><div class="kotakcalon sema2">
-                            <img src="img/person_dummy.jpg" onclick="pilihsema(2)"><br>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                VisiMisi
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <h3>Visi</h3>
-                                            <hr>
-                                            <ol>
-                                                <li>
-                                                    LOL
-                                                </li>
-                                                <li>
-                                                    LOL2
-                                                </li><li>
-                                                    LOL3
-                                                </li>
-                                            </ol>
-                                            <h3>Misi</h3>
-                                            <hr>
-                                            <ol>
-                                                <li>
-                                                    LOL
-                                                </li>
-                                                <li>
-                                                    LOL2
-                                                </li><li>
-                                                    LOL3
-                                                </li>
-                                            </ol>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> 
-                        </div>
-                    </label>
-
-
 
                     <div><h1 class="panel-heading" > Calon Ketua Tingkat STIS</h1><hr></div>
             
@@ -164,108 +115,18 @@ Copyright 2016 TGS
                             </div>
                         </div> 
                     </div>
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" id="ketuatingkat" name="ketuatingkat" value="ketuatingkat2"><div class="kotakcalon tingkat2">
-                        <img src="img/person_dummy.jpg" onclick="pilihtingkat(2)"><br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                            VisiMisi
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Visi</h3>
-                                        <hr>
-                                        <ol>
-                                            <li>
-                                                LOL
-                                            </li>
-                                            <li>
-                                                LOL2
-                                            </li><li>
-                                                LOL3
-                                            </li>
-                                        </ol>
-                                        <h3>Misi</h3>
-                                        <hr>
-                                        <ol>
-                                            <li>
-                                                LOL
-                                            </li>
-                                            <li>
-                                                LOL2
-                                            </li><li>
-                                                LOL3
-                                            </li>
-                                        </ol>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </label>
-                <label class="radio-inline">
-                    <input type="radio" id="ketuatingkat" name="ketuatingkat" value="ketuatingkat3"><div class="kotakcalon tingkat3">
-                        <img src="img/person_dummy.jpg" onclick="pilihtingkat(3)"><br>
-                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                            VisiMisi
-                        </button>
-                        <!-- Modal -->
-                        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <h3>Visi</h3>
-                                        <hr>
-                                        <ol>
-                                            <li>
-                                                LOL
-                                            </li>
-                                            <li>
-                                                LOL2
-                                            </li><li>
-                                                LOL3
-                                            </li>
-                                        </ol>
-                                        <h3>Misi</h3>
-                                        <hr>
-                                        <ol>
-                                            <li>
-                                                LOL
-                                            </li>
-                                            <li>
-                                                LOL2
-                                            </li><li>
-                                                LOL3
-                                            </li>
-                                        </ol>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                </label>
+                    </label>
 
-
-                <div class="span12" id="container2">
-                    <button type="submit" class="btn-success btn-lg" onclick="submit">SUBMIT</button>
-                </div>
+                    <div class="span12" id="container2">
+                        <button type="submit" class="btn-success btn-lg" onclick="submit">SUBMIT</button>
+                    </div>
                 
                 </form>
-            </div>
+        </div>
+    {{else}}
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+    {{/if}}
 	{{> footer}}
 </template>	

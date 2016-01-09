@@ -1,8 +1,8 @@
 Meteor.methods({
-	addLoginLog: function(pw){
+	addLoginLog: function(user){
 		LoginLog.insert({
-	        user: pw,
+	        user: user,
 	        loginAt: new Date() // current time
-	      });
+	    });
 	}
 });
