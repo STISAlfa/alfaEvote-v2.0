@@ -2,36 +2,34 @@
 
   {{> modal}}
 
-  <div id="login-page" class="row">
-    <div class="col m8 s6 offset-s3">
-          <div class="container card blue-grey darken-1 z-depth-5">
-            <div class="card-content white-text center">
-              <span class="card-title" id="setis-p">SEKOLAH TINGGI ILMU STATISTIK</span><br>
-              <span class="card-title" id="evote-p">E-Vote 2016</span><hr>
-              <form class="login-form row">
-                
-                <div class="input-field col s12" >
-                  <i class="mdi-social-person-outline prefix"></i>
-                  <input class="{{erorLogin}}" required="" aria-required="true" type="text" name="user" autocomplete="off">
-                  <label for="password">Password</label>
-                </div>
-
-                <div class="input-field col s6">
-                  <button type="submit" class="btn waves-effect waves-light col s12" style="font-size: 20px;">
-                    Masuk</button>
-                </div>
-
-                <div class="input-field col s6">
-                  <button type="reset" class="btn waves-effect waves-light col s12" style="font-size: 20px;">
-                      Reset</button>
-                </div>
-
-              </form>
-            </div>
-            <div class="waves-effect waves-light card-action" onclick="$('#modal1').openModal();">
-              <a>Butuh Bantuan?</a>
-            </div>
+  <div id="login-page">
+    <div class="card blue-grey darken-1 z-depth-5">
+      <div class="card-content white-text center">
+        <span class="card-title" id="setis-p">SEKOLAH TINGGI ILMU STATISTIK</span><br>
+        <span class="card-title" id="evote-p">E-Vote 2016</span><hr>
+        <form class="login-form row">
+          
+          <div class="input-field col s12" >
+            <i class="mdi-social-person-outline prefix"></i>
+            <input class="{{erorLogin}}" required="" aria-required="true" id="input-p" type="text" name="user" autocomplete="off">
+            <label for="password">Password</label>
           </div>
+
+          <div class="input-field col s6">
+            <button type="submit" class="btn waves-effect waves-light col s12" style="font-size: 20px;">
+              Masuk</button>
+          </div>
+
+          <div class="input-field col s6">
+            <button type="reset" class="btn waves-effect waves-light col s12" style="font-size: 20px;">
+                Reset</button>
+          </div>
+
+        </form>
+      </div>
+      <div class="waves-effect waves-light card-action" onclick="$('#modal1').openModal();">
+        <a>Butuh Bantuan?</a>
+      </div>
     </div>
   </div>
 </template>

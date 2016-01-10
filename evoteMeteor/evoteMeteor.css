@@ -6,6 +6,33 @@ body{
     background-image: url('/img/footer_lodyas.png');
 }
 
+#foter{
+    color: white;
+    opacity: 0.6;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: right;
+}
+
+#setis-p{
+    font-weight: 100;
+}
+
+#evote-p{
+    font-style: bold;
+    font-weight: 900;
+}
+
+#input-p{
+    font-weight: 900;
+    font-size: 30px;
+}
+
+#login-page{
+    margin: 10% 30% 0%;
+}
+
 .kotakcalon{
     color: #666666;
     background-color: #666666;
@@ -28,46 +55,6 @@ body{
     text-align: center;
 }
 
-label > input{ /* HIDE RADIO */
-  visibility: hidden; /* Makes input not-clickable */
-  position: absolute; /* Remove input from document flow */
-}
-
-label > input:checked + div{ /* (RADIO CHECKED) IMAGE STYLES */
-  border:2px solid #f00;
-}
-
 #container2 form{
     margin-top: 2%;
-}
-
-#setis-p{
-    font-weight: 100;
-}
-
-#evote-p{
-    font-style: bold;
-    font-weight: 900;
-}
-
-#login-page{
-    margin-top: 10%;
-}
-
-#iconlog{
-    float: left;
-    clear: both;
-}
-
-#foter{
-    color: white;
-    opacity: 0.6;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    text-align: right;
-}
-
-#formuser{
-    margin-bottom: 10px;
 }
