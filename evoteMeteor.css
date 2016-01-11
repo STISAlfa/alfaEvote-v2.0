@@ -33,28 +33,11 @@ body{
     margin: 10% 30% 0%;
 }
 
-.kotakcalon{
-    color: #666666;
-    background-color: #666666;
-}
-
-.kotakcalon img:hover{
-    opacity: 0.8;
-}
-
-.kotakcalon img{
-    width: 128px;
-}
-
-.kotakcalon button{
-    margin-top: 3%;
-}
-
 #container2{
     color : white;
     text-align: center;
 }
 
-#container2 form{
-    margin-top: 2%;
+.panel-heading{
+    font-weight: 100;
 }

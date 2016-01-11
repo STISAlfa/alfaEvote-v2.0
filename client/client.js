@@ -11,13 +11,13 @@ Template.loginM.events({
 	    		// Insert a task into the collection
 			    if (typeof(ada) == "object") {
 			      	Meteor.call('addLoginLog', user);
-			      	Session.set('sudahLogin', true);
-			      	Session.set('angkatan', user[0]);
+			      	Session.setPersistent('sudahLogin', true);
+			      	Session.setPersistent('angkatan', user[0]);
 			    	FlowRouter.go('vote');}
 			    else{
 			    	event.target.user.value = "";
-			    	Session.set('erorLogin', 'invalid');
-			    	Materialize.toast('<h4>Password Salah</h4>', 4000, 'red');}
+			    	Session.setPersistent('erorLogin', 'invalid');
+			    	Materialize.toast('<h4>Password Salah</h4>', 4000, 'blue-grey darken-1');}
 	    	}
 	    });
   	}
@@ -29,4 +29,8 @@ Template.voting.onCreated(function() {
 		self.subscribe("CalonSema");
 		self.subscribe("CalonAngkatan",Session.get('angkatan'));
 	});
+});
+
+Template.registerHelper('erorLogin',function(input){
+  return Session.get("erorLogin");
 });

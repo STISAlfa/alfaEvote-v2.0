@@ -1,0 +1,49 @@
+<!--
+This web is developed by STISAlfa's Member :
+Name        : Thosan Girisona S
+Github-ID   : blankon123
+University  : Statistics Institute Of Indonesia
+Year        : 2016
+All Right Reserved
+Copyright 2016 TGS
+-->
+<template name="voting">
+    {{#if Template.subscriptionsReady}}
+        <div id="container2">
+                <form role="form">
+                    <h3 class="panel-heading"> Calon Ketua SEMA STIS</h3><hr>
+
+                    <div class="row">
+                        <div class="col s8 m3 offset-s3">
+                          <div class="card blue-grey darken-1">
+                            <div class="card-content blue-text">
+                              <div class="card-image">
+                               <img src="img/person_dummy.jpg">
+                               <span class="card-title">Card Title</span>
+                              </div>
+                            </div>
+                            <div class="card-action">
+                              <a href="#">Visi Misi</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+
+                    <div><h3 class="panel-heading" > Calon Ketua Tingkat STIS</h3><hr></div>
+            
+                    <label class="radio-inline">
+                        <h1>CEKCOK</h1>
+                    </label>
+
+                    <div class="span12" id="container2">
+                        <button type="submit" class="btn-success btn-lg" onclick="submit">SUBMIT</button>
+                    </div>
+                
+                </form>
+        </div>
+    {{else}}
+        <div class="progress">
+          <div class="indeterminate"></div>
+        </div>
+    {{/if}}
+</template>	
