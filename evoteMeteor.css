@@ -41,3 +41,7 @@ body{
 .panel-heading{
     font-weight: 100;
 }
+
+.voting-card{
+    margin: 10% 30% 0%;
+}

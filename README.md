@@ -1,2 +1,2 @@
 # alfaEvote-v2.0
-Aplikasi Voting sederhana menggunakan NodeJS + MongoDB
+Aplikasi Voting sederhana menggunakan Meteor + MongoDB

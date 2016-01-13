@@ -1,8 +1,13 @@
 Meteor.methods({
 	addLoginLog: function(user){
-		LoginLog.insert({
-	        user: user,
-	        loginAt: new Date() // current time
-	    });
+		if (LoginLog.find({user : user})){
+			LoginLog.update({user : user}, {loginAt: new Date()});
+		}
+		else{
+			LoginLog.insert({
+		        user: user,
+		        loginAt: new Date() // current time
+		    });
+		}
 	}
-});
+});	
