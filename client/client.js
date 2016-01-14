@@ -19,10 +19,24 @@ Template.loginM.events({
 			    else{
 			    	event.target.user.value = "";
 			    	Session.setPersistent('erorLogin', 'invalid');
-			    	Materialize.toast('Password Salah', 4000, 'blue-grey darken-1');}
+			    	Materialize.toast('<div class="red-text" style="font-style: bold;font-weight: 900;"> Password Salah </div>', 4000, 'blue-grey darken-1');}
 	    	}
 	    });
   	}
+});
+
+Template.voting.events({
+	'submit .VoteForm': function () {
+		event.preventDefault();
+
+		user 			= Session.get('user');
+		kodeSema 		= event.target.sema.value; 		//getVoteSema still not implemented
+		kodeAngkatan 	= event.target.angkatan.value; 	//getVoteAngkatan still not implemented
+		Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan);
+		
+		Session.setPersistent('sudahVote', true);
+      	FlowRouter.go('thankyou'); 
+	}
 });
 
 Template.registerHelper('erorLogin',function(input){

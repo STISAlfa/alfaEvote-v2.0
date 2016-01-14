@@ -10,7 +10,7 @@ Copyright 2016 TGS
 <template name="voting">
     {{#if Template.subscriptionsReady}}
         <div id="container2">
-                <form role="form">
+                <form class="VoteForm">
                     <h3 class="panel-heading"> Calon Ketua SEMA STIS</h3><hr>
 
                     <div class="row">
@@ -36,9 +36,9 @@ Copyright 2016 TGS
                     </label>
 
                     <div class="span12" id="container2">
-                        <button type="submit" class="btn-success btn-lg" onclick="submit">SUBMIT</button>
-                    </div>
-                
+                        <button type="submit" class="btn waves-effect waves-light col s12" style="font-size: 15px;">
+                        Pilih</button>
+                    </div>                
                 </form>
         </div>
     {{else}}
