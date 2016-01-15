@@ -1,6 +1,5 @@
 Template.loginM.events({
   	"submit .login-form": function (event) {
-
 	    // Prevent default browser form submit
 	    event.preventDefault();
 	    // Get value from form element
@@ -25,22 +24,22 @@ Template.loginM.events({
   	}
 });
 
+Template.loginM.helpers('erorLogin',function(input){
+  return Session.get("erorLogin");
+});
+
 Template.voting.events({
 	'submit .VoteForm': function () {
 		event.preventDefault();
 
 		user 			= Session.get('user');
-		kodeSema 		= event.target.sema.value; 		//getVoteSema still not implemented
-		kodeAngkatan 	= event.target.angkatan.value; 	//getVoteAngkatan still not implemented
-		Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan);
+		//kodeSema 		= event.target.sema.value; 		//getVoteSema still not implemented
+		//kodeAngkatan 	= event.target.angkatan.value; 	//getVoteAngkatan still not implemented
+		//Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan);
 		
 		Session.setPersistent('sudahVote', true);
       	FlowRouter.go('thankyou'); 
 	}
-});
-
-Template.registerHelper('erorLogin',function(input){
-  return Session.get("erorLogin");
 });
 
 Template.voting.onCreated(function() {

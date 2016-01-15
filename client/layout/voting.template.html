@@ -14,6 +14,38 @@ Copyright 2016 TGS
                     <h3 class="panel-heading"> Calon Ketua SEMA STIS</h3><hr>
 
                     <div class="row">
+                        {{#each calonSema}}
+                        <div class="col s8 m3">
+                          <div class="card blue-grey hoverable darken-1">
+
+                            <div>
+                               <img src="{{image}}" width="130">
+                               <img src="{{image}}" width="130">
+                               <span class="card-title">{{name}}</span>
+                            </div>
+
+                            <div class="card-action" onclick="$('#modal1').openModal();">
+                              <a>Visi Misi</a>
+                            </div>
+
+                            <div id="modal1" class="modal">
+                                <div class="modal-content">
+                                  <h4>Visi Misi</h4>
+                                  <p>A bunch of text</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
+                                </div>
+                              </div>
+                          </div>
+                        </div>
+                        {{/each}}
+                    </div>
+
+                    <div><h3 class="panel-heading" > Calon Ketua Tingkat STIS</h3><hr></div>
+                    
+                    <div class="row">
+                        {{#each calonAngkatan}}
                         <div class="col s8 m3">
                           <div class="card blue-grey hoverable darken-1">
                             <div class="card-content blue-text">
@@ -27,13 +59,8 @@ Copyright 2016 TGS
                             </div>
                           </div>
                         </div>
+                        {{/each}}
                     </div>
-
-                    <div><h3 class="panel-heading" > Calon Ketua Tingkat STIS</h3><hr></div>
-            
-                    <label class="radio-inline">
-                        <h1>CEKCOK</h1>
-                    </label>
 
                     <div class="span12" id="container2">
                         <button type="submit" class="btn waves-effect waves-light col s12" style="font-size: 15px;">
@@ -41,6 +68,7 @@ Copyright 2016 TGS
                     </div>                
                 </form>
         </div>
+
     {{else}}
         <div class="progress">
           <div class="indeterminate"></div>
