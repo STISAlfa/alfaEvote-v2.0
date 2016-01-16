@@ -36,6 +36,20 @@ body{
 #container2{
     color : white;
     text-align: center;
+    margin:0 auto;
+    /*width: 1000px;*/
+}
+
+.foto-calon{
+    padding-top: 10px;
+}
+
+.kotakcalon{
+    width: 300px;
+}
+
+.kolom-dua{
+    margin-right: 80.563px;
 }
 
 .panel-heading{
@@ -44,4 +58,19 @@ body{
 
 .voting-card{
     margin: 10% 30% 0%;
+}
+
+.card-content{
+    font-size: 20px;
+}
+
+
+label > div > input{ /* HIDE RADIO */
+  visibility: hidden; /* Makes input not-clickable */
+  position: absolute; /* Remove input from document flow */
+}
+
+label > div > input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
+    background: url(../img/checked.png) green no-repeat;
+    opacity: 1;
 }

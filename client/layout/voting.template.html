@@ -9,36 +9,40 @@ Copyright 2016 TGS
 -->
 <template name="voting">
     {{#if Template.subscriptionsReady}}
-        <div id="container2">
+        <div class="container center span12" id="container2">
                 <form class="VoteForm">
-                    <h3 class="panel-heading"> Calon Ketua SEMA STIS</h3><hr>
+                    <h3 class="panel-heading"> Calon Ketua SEMA STIS</h3>
+                    <hr>
 
                     <div class="row">
                         {{#each calonSema}}
-                        <div class="col s8 m3">
-                          <div class="card blue-grey hoverable darken-1">
+                        <label class="radio-inline">
+                            <div class="{{#if isEven semaSize}} col s12 m4 offset-m1 kolom-dua{{else}}col s12 m4{{/if}}">
+                            <input type="radio" id="sema" name="sema" value="{{ modal_id }}">
+                            <div class="card blue-grey hoverable darken-1">
 
-                            <div>
-                               <img src="{{image}}" width="130">
-                               <img src="{{image}}" width="130">
-                               <span class="card-title">{{name}}</span>
-                            </div>
-
-                            <div class="card-action" onclick="$('#modal1').openModal();">
-                              <a>Visi Misi</a>
-                            </div>
-
-                            <div id="modal1" class="modal">
-                                <div class="modal-content">
-                                  <h4>Visi Misi</h4>
-                                  <p>A bunch of text</p>
-                                </div>
-                                <div class="modal-footer">
-                                  <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
-                                </div>
+                              <div class="foto-calon">
+                                 <img src="{{image}}" width="130">
+                                 <img src="{{image}}" width="130">
                               </div>
+                              <div class="card-content white-text">{{ name }}</div>
+
+                              <div class="card-action" onclick="$('#modal{{ modal_id }}').openModal();">
+                                <a>Visi Misi</a>
+                              </div>
+
+                              <div id="modal{{ modal_id }}" class="modal">
+                                  <div class="modal-content" style="color: black">
+                                    <h4>Visi Misi</h4>
+                                    <p>{{ visimisi }}</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
+                                  </div>
+                                </div>
+                            </div>
                           </div>
-                        </div>
+                        </label>
                         {{/each}}
                     </div>
 
@@ -46,20 +50,33 @@ Copyright 2016 TGS
                     
                     <div class="row">
                         {{#each calonAngkatan}}
-                        <div class="col s8 m3">
+                        <label class="radio-inline">
+                        <div class="{{#if isEven angkatanSize}} col s12 m4 offset-m1 kolom-dua{{else}}col s12 m4{{/if}}">
+                          <input type="radio" id="ketuatingkat" name="ketuatingkat" value="{{ modal_id }}">
                           <div class="card blue-grey hoverable darken-1">
-                            <div class="card-content blue-text">
-                              <div class="card-image">
-                               <img src="img/person_dummy.jpg">
-                               <span class="card-title">Card Title</span>
-                              </div>
+                            <div class="foto-calon">
+                             <img src="{{ image }}" width="150">
                             </div>
-                            <div class="card-action">
-                              <a href="#">Visi Misi</a>
+
+                            <div class="card-content white-text">{{ name }}</div>
+
+                            <div class="card-action" onclick="$('#modal{{ modal_id }}').openModal();">
+                              <a>Visi Misi</a>
                             </div>
                           </div>
-                        </div>
-                        {{/each}}
+
+                          <div id="modal{{ modal_id }}" class="modal">
+                            <div class="modal-content" style="color: black">
+                              <h4>Visi Misi</h4>
+                              <p>{{ visimisi }}</p>
+                            </div>
+                            <div class="modal-footer">
+                              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
+                            </div>
+                          </div>
+                      </div>
+                      </label>
+                      {{/each}}
                     </div>
 
                     <div class="span12" id="container2">

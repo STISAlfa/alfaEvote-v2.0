@@ -5,5 +5,5 @@ Meteor.publish('CalonSema',function(){
 	return CalonSema.find( {} );
 });
 Meteor.publish('CalonAngkatan',function(angkatan){
-	return CalonAngkatan.find( {"angkatan":angkatan} );
+	return CalonAngkatan.find( {"angkatan" : angkatan} );
 });

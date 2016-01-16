@@ -56,5 +56,17 @@ Template.voting.helpers({
     },
     calonAngkatan: function () {
         return CalonAngkatan.find({});
+    },
+    semaSize: function () {
+    	return CalonSema.find().count();
+    },
+    angkatanSize: function () {
+    	return CalonAngkatan.find().count();	
+    },
+    isEven: function (angka) {
+    	if( angka % 2 == 0 ){
+    		return true;
+    	}
+    	return false;
     }
 });
