@@ -70,3 +70,13 @@ Template.voting.helpers({
     	return false;
     }
 });
+
+
+Template.result.helpers({
+  hasilSema : function(){
+       return Session.get('VoteRes').hasilSema;
+  },
+  hasilAngkatan : function(){
+       return Session.get('VoteRes').hasilAngkatan;
+  }
+});
