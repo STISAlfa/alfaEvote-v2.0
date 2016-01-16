@@ -17,5 +17,8 @@ Meteor.methods({
 	        kodeAngkatan : kodeAngkatan,
 	        waktuMilih: new Date() // current time
 	    });
+	    Users.update({user : user}, {
+	    	sudahVote : true
+	    });
 	}
 });	
