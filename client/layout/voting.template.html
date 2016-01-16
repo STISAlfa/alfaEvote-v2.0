@@ -22,8 +22,8 @@ Copyright 2016 TGS
                             <div class="card blue-grey hoverable darken-1">
 
                               <div class="foto-calon">
-                                 <img src="{{image}}" width="130">
-                                 <img src="{{image}}" width="130">
+                                 <img src="{{image1}}" width="130">
+                                 <img src="{{image2}}" width="130">
                               </div>
                               <div class="card-content white-text">{{ name }}</div>
 
@@ -33,8 +33,17 @@ Copyright 2016 TGS
 
                               <div id="modal{{ modal_id }}" class="modal">
                                   <div class="modal-content" style="color: black">
-                                    <h4>Visi Misi</h4>
-                                    <p>{{ visimisi }}</p>
+                                    <ul class="collection with-header">
+                                      <li class="collection-header"><h4>Visi</h4></li>
+                                      {{ visi }} 
+                                    </ul>
+                                    <hr>
+                                    <ul class="collection with-header">
+                                      <li class="collection-header"><h4>Misi</h4></li>
+                                      {{#each misi}}
+                                        <li class="collection-item">{{ misi }}</li>
+                                      {{/each}}
+                                    </ul>
                                   </div>
                                   <div class="modal-footer">
                                     <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
@@ -67,8 +76,17 @@ Copyright 2016 TGS
 
                           <div id="modal{{ modal_id }}" class="modal">
                             <div class="modal-content" style="color: black">
-                              <h4>Visi Misi</h4>
-                              <p>{{ visimisi }}</p>
+                            <ul class="collection with-header">
+                              <li class="collection-header"><h4>Visi</h4></li>
+                              {{ visi }}
+                            </ul>
+                            <hr>
+                            <ul class="collection with-header">
+                              <li class="collection-header"><h4>Misi</h4></li>
+                              {{#each misi}}
+                                <li class="collection-item">{{ misi }}</li>
+                              {{/each}}
+                            </ul>
                             </div>
                             <div class="modal-footer">
                               <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Tutup</a>
