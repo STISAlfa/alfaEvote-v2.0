@@ -100,6 +100,13 @@ Template.result.helpers({
 
 
 Template.result.helpers({
+	jumlahSuara : function(arr,a,b){
+  		var ans = 0;
+  		for (var i = a; i <= b; i++) {
+  			ans += arr[i];
+  		};
+  		return ans;
+  	},
 	hasilPemiraSemaChart : function() {
 	    return {
 		chart: {
@@ -131,8 +138,8 @@ Template.result.helpers({
 		    type: 'pie',
 		    name: 'hasil pemira sema',
 		    data: [
-		        ['Calon nomor 1',   45.0],
-		        ['Calon nomor 2',   55.0]
+		        ['Calon nomor 1',   Session.get('VoteRes').hasilSema[0]],
+		        ['Calon nomor 2',   Session.get('VoteRes').hasilSema[1]]
 		    ]
 		}]
 	    };
@@ -168,8 +175,9 @@ Template.result.helpers({
 		    type: 'pie',
 		    name: 'hasil pemira tingkat 1',
 		    data: [
-		        ['Calon nomor 1',   45.0],
-		        ['Calon nomor 2',   55.0]
+		        ['Calon nomor 1',   Session.get('VoteRes').hasilAngkatan[0]],
+		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[1]],
+		        ['Calon nomor 3',   Session.get('VoteRes').hasilAngkatan[2]]
 		    ]
 		}]
 	    };
@@ -205,8 +213,8 @@ Template.result.helpers({
 		    type: 'pie',
 		    name: 'hasil pemira tingkat 2',
 		    data: [
-		        ['Calon nomor 1',   45.0],
-		        ['Calon nomor 2',   55.0]
+		        ['Calon nomor 1',   Session.get('VoteRes').hasilAngkatan[3]],
+		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[4]]
 		    ]
 		}]
 	    };
@@ -242,8 +250,8 @@ Template.result.helpers({
 		    type: 'pie',
 		    name: 'hasil pemira tingkat 3',
 		    data: [
-		        ['Calon nomor 1',   45.0],
-		        ['Calon nomor 2',   55.0]
+		        ['Calon nomor 1',   Session.get('VoteRes').hasilAngkatan[5]],
+		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[6]]
 		    ]
 		}]
 	    };
@@ -279,8 +287,9 @@ Template.result.helpers({
 		    type: 'pie',
 		    name: 'hasil pemira tingkat 4',
 		    data: [
-		        ['Calon nomor 1',   1.0],
-		        ['Calon nomor 2',   2.0]
+		        ['Calon nomor 1',   Session.get('VoteRes').hasilAngkatan[7]],
+		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[8]],
+		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[9]]
 		    ]
 		}]
 	    };
@@ -346,6 +355,7 @@ Template.header.events({
 		Session.setPersistent('sudahLogin',false);
 		Session.setPersistent('tipeUser','');
 		Session.setPersistent('user','');
+		Session.setPersistent('angkatan',null);
 		FlowRouter.go('admin');
 	}
 });
