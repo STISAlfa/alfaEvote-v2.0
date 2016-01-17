@@ -1,0 +1,120 @@
+<!--
+This web is developed by STISAlfa's Member :
+Name        : Amanda Pratama Putra
+Github-ID   : mandes95
+University  : Statistics Institute Of Indonesia
+Year        : 2016
+All Right Reserved
+Copyright 2016 TGS
+-->
+<template name="result">
+    {{#if Template.subscriptionsReady}}
+	{{>header}}	
+	  <div class="navbar-fixed">
+  	  <nav>
+	    <div class="nav-wrapper teal lighten-2">
+	      <a href="#" class="brand-logo">PEMIRA STIS 2016-2017</a>
+	      <ul id="nav-mobile" class="right hide-on-med-and-down">
+		<li><a href="#sema">SEMA</a></li>
+		<li><a href="#tingkat1">Tingkat 1</a></li>
+		<li><a href="#tingkat2">Tingkat 2</a></li>
+		<li><a href="#tingkat3">Tingkat 3</a></li>
+		<li><a href="#tingkat4">Tingkat 4</a></li>
+	 	<li><a href="#logout">Logout</a></li>
+	      </ul>
+	    </div>
+	  </nav>
+          </div>
+	  
+          <div class="container">
+		<div class="result-card">
+		  <div class="card blue-grey darken-4" style="padding:20px">
+			  <div class="row" style="margin-bottom:0">
+			    <div class="col s12"><h5 class="center-align" style="color:white">Total Suara Masuk : <span style="font-size:40px">3000</span></h5></div>
+			    <div class="col s3">
+				<div class="card hoverable">
+				    <div class="card-title teal lighten-2 center-align">Tingkat 1</div>
+				    <div class="card-content">
+				      <h2 class="center-align">500</h2>
+				    </div>
+				</div>
+			    </div>
+			    <div class="col s3">
+				<div class="card hoverable">
+				    <div class="card-title teal lighten-2 center-align">Tingkat 2</div>
+				    <div class="card-content">
+				      <h2 class="center-align">400</h2>
+				    </div>
+				</div>
+			    </div>
+			    <div class="col s3">
+				<div class="card hoverable">
+				    <div class="card-title teal lighten-2 center-align">Tingkat 3</div>
+				    <div class="card-content">
+				      <h2 class="center-align">300</h2>
+				    </div>
+				</div>
+			    </div>
+			    <div class="col s3">
+				<div class="card hoverable">
+				    <div class="card-title teal lighten-2 center-align">Tingkat 4</div>
+				    <div class="card-content">
+				      <h2 class="center-align">320</h2>
+				    </div>
+				</div>
+			    </div>
+			  </div>
+		   </div>
+		</div>
+	  </div>
+  	  <div class="row">
+	    <div class="col offset-l2 s12 m4 l8">
+	    	<div id="sema" class="section scrollspy">
+		  {{> highchartsHelper chartId="semachart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraSemaChart}}
+		
+	  	</div>
+	    </div>
+	  </div>
+	  
+  	  <div class="row">
+	    <div class="col offset-l2 s12 m4 l8">
+		  <div id="tingkat1" class="section scrollspy">
+			  {{> highchartsHelper chartId="tingkat1chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat1Chart}}
+			  
+		  </div>
+	    </div>
+	  </div>
+	  
+	  <div class="row">
+	    <div class="col offset-l2 s12 m4 l8">
+		  <div id="tingkat2" class="section scrollspy">
+			  {{> highchartsHelper chartId="tingkat2chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat2Chart}}
+			  
+		  </div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col offset-l2 s12 m4 l8">
+		  <div id="tingkat3" class="section scrollspy">
+			  {{> highchartsHelper chartId="tingkat3chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat3Chart}}
+			
+		  </div>
+	    </div>
+	  </div>
+
+	  <div class="row">
+	    <div class="col offset-l2 s12 m4 l8">
+		  <div id="tingkat4" class="section scrollspy">
+			  {{> highchartsHelper chartId="tingkat4chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat4Chart}}
+			  
+		  </div>
+	    </div>
+	  </div>	
+
+	  	
+	{{>footer}}
+    
+   {{/if}}
+</template>	
+

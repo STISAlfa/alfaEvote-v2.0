@@ -64,6 +64,10 @@ body{
     font-size: 20px;
 }
 
+.counter{
+    font-size: 70px;
+    font-style: bold;
+}
 
 label > div > input{ /* HIDE RADIO */
   visibility: hidden; /* Makes input not-clickable */

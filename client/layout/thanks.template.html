@@ -7,12 +7,38 @@ Year        : 2016
 All Right Reserved
 Copyright 2016 TGS
 -->
-<template name='thanks'>
-	<div class="col-md-4 col-md-offset-4"  id="containers" style="color: white;text-align: center;">
-                <br><b style=" font-size:20px;">Terima Kasih Telah Berkontribusi</b>
-                <br><b style=" font-size:20px;">Tim PEMIRA 2016</b>
-                <br><span class="glyphicon glyphicon-refresh glyphicon-spin" id="iconlog" style="float: none; font-size:20px;"></span>
-                <b style=" font-size:20px;">Redirecting</b>
-                <span class="glyphicon glyphicon-refresh glyphicon-spin" id="iconlog" style="float: none; font-size:20px;"></span>
+<template name="thanks">
+    <div class="row">
+        <div class="col s8 offset-s2 m4 offset-m4 l4 offset-l4">
+          <div class="card center">
+            <div class="card-image center">
+              <img src="img/checked.png" style="width: 40%; left: 30%; right: 30%; top: 20px">
+            </div>
+            <div class="card-content">
+              <h3><p>Terima Kasih telah berpartisipasi</p></h3>
+                <div class="timer">
+                    Silahkan keluar dari bilik pemilihan, <br>halaman ini akan <i>reload</i> dalam
+                    <div class="counter">9</div>detik
+                </div>
+            </div>
+            <div class="card-action">
+              <a>Tim Pemira 2016</a>
+            </div>
+          </div>
+        </div>
     </div>
+    <script type="text/javascript">
+        $(document).ready(function() {
+
+          var timer = setInterval(function() {
+
+            var count = parseInt($('.counter').html());
+            if (count !== 0) {
+              $('.counter').html(count - 1);
+            } else {
+              clearInterval(timer);
+            }
+          }, 1000);
+        });
+    </script>
 </template>

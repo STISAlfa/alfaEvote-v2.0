@@ -18,27 +18,43 @@ Template.loginM.events({
 			    else{
 			    	event.target.user.value = "";
 			    	Session.setPersistent('erorLogin', 'invalid');
-			    	Materialize.toast('<div class="red-text" style="font-style: bold;font-weight: 900;"> Password Salah </div>', 4000, 'blue-grey darken-1');}
+			    	Materialize.toast('<div class="white-text" style="font-style: bold;font-weight: 900;"> Password Salah </div>', 4000, 'red darken-3');}
 	    	}
 	    });
   	}
 });
 
-Template.loginM.helpers('erorLogin',function(input){
-  return Session.get("erorLogin");
-});
-
 Template.voting.events({
-	'submit .VoteForm': function () {
+	'submit .VoteForm': function (event) {
 		event.preventDefault();
 
-		user 			= Session.get('user');
-		//kodeSema 		= event.target.sema.value; 		//getVoteSema still not implemented
-		//kodeAngkatan 	= event.target.angkatan.value; 	//getVoteAngkatan still not implemented
-		//Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan);
+		user 			= Session.get('user');	
+		kodeSema 		= $("input[name='sema']:checked").val(); 		//getVoteSema still not implemented
+		kodeAngkatan 	= $("input[name='ketuatingkat']:checked").val(); 	//getVoteAngkatan still not implemented
 		
-		Session.setPersistent('sudahVote', true);
-      	FlowRouter.go('thankyou'); 
+		if ((typeof kodeSema == 'undefined') || (typeof kodeAngkatan == 'undefined'))
+		{
+			Materialize.toast('<div class="white-text" style="font-style: bold;font-weight: 600;"> Harap Memilih Kandidat SEMA dan Kandidat Tingkat</div>', 4000, 'red darken-3');
+		}
+		else {
+			Session.setPersistent('sudahVote', true);
+			Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan, function(err, data) {
+				if (err) console.log(err);
+			 	else {
+			 		//console.log('Sukses COK',kodeSema,kodeAngkatan);
+			 		FlowRouter.go('thankyou'); 
+			 	}
+			});
+		}
+	},
+	'click #sema,#ketuatingkat':function(event){
+		kodeSema 		= $("input[name='sema']:checked").val(); 		//getVoteSema still not implemented
+		kodeAngkatan 	= $("input[name='ketuatingkat']:checked").val(); 	//getVoteAngkatan still not implemented
+		
+		if ((typeof kodeSema != 'undefined') && (typeof kodeAngkatan != 'undefined'))
+		{
+			$( ".btn-large" ).removeClass( "disabled" )
+		}
 	}
 });
 
