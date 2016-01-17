@@ -7,3 +7,6 @@ Meteor.publish('CalonSema',function(){
 Meteor.publish('CalonAngkatan',function(angkatan){
 	return CalonAngkatan.find( {"angkatan" : angkatan} );
 });
+Meteor.publish('Admin',function(user){
+	return Admin.find( {"name": user} );
+});

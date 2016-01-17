@@ -11,5 +11,38 @@ Copyright 2016 TGS
 	<header>
 		<link rel="icon" type="image/png" href="/img/favicon.png" />
 		<title>PEMIRA STIS 2016-2017</title>
+		{{#if cekTipeUser 'admin'}}
+		<div class="navbar-fixed">
+			<nav class="admin">
+		        <div class="nav-wrapper teal lighten-2">
+			        <a href="#" class="brand-logo">PEMIRA STIS 2016-2017</a>
+			        <a href="#" data-activates="slide-out" class="button-collapse top-nav full hide-on-large-only"><i class="mdi-navigation-menu"></i></a>
+			        {{#if resultPage}}
+			        <ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="#sema">SEMA</a></li>
+					<li><a href="#tingkat1">Tingkat 1</a></li>
+					<li><a href="#tingkat2">Tingkat 2</a></li>
+					<li><a href="#tingkat3">Tingkat 3</a></li>
+					<li><a href="#tingkat4">Tingkat 4</a></li>
+				    </ul>
+			        {{/if}}
+		        </div>
+		    </nav>
+	        <ul id="slide-out" class="side-nav fixed">
+			  	<li class="logo center">
+    				<img class="responsive-img" src="/img/person_dummy.jpg" width="200">
+    			</li>
+    			<li class="stisalfa">
+    				<hr>
+    				<div id="project">Alfaevote</div> 
+    				<span id="caption">Made with &hearts; by STISAlfa</span>
+    				<hr>
+    			</li>
+			    <li style="text-align: center"><a href="#" class="data">Data</a></li>
+			    <li style="text-align: center"><a href="#" class="result">Result</a></li>
+			    <li style="text-align: center"><a href="#" class="logout" >Logout</a></li>
+			</ul>
+		</div>
+		{{/if}}
 	</header>
 </template>

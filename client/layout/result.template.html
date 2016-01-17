@@ -9,8 +9,7 @@ Copyright 2016 TGS
 -->
 <template name="result">
     {{#if Template.subscriptionsReady}}
-	{{>header}}	
-	  <div class="navbar-fixed">
+	  <!-- div class="navbar-fixed">
   	  <nav>
 	    <div class="nav-wrapper teal lighten-2">
 	      <a href="#" class="brand-logo">PEMIRA STIS 2016-2017</a>
@@ -24,9 +23,9 @@ Copyright 2016 TGS
 	      </ul>
 	    </div>
 	  </nav>
-          </div>
+          </div> -->
 	  
-          <div class="container">
+          <div class="container admin">
 		<div class="result-card">
 		  <div class="card blue-grey darken-4" style="padding:20px">
 			  <div class="row" style="margin-bottom:0">
@@ -67,8 +66,8 @@ Copyright 2016 TGS
 		   </div>
 		</div>
 	  </div>
-  	  <div class="row">
-	    <div class="col offset-l2 s12 m4 l8">
+  	  <div class="row admin">
+	    <div class="col s12 m10 offset-m1 l8 offset-l2">
 	    	<div id="sema" class="section scrollspy">
 		  {{> highchartsHelper chartId="semachart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraSemaChart}}
 		
@@ -76,8 +75,8 @@ Copyright 2016 TGS
 	    </div>
 	  </div>
 	  
-  	  <div class="row">
-	    <div class="col offset-l2 s12 m4 l8">
+  	  <div class="row admin">
+	    <div class="col s12 m10 offset-m1 l8 offset-l2">
 		  <div id="tingkat1" class="section scrollspy">
 			  {{> highchartsHelper chartId="tingkat1chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat1Chart}}
 			  
@@ -85,8 +84,8 @@ Copyright 2016 TGS
 	    </div>
 	  </div>
 	  
-	  <div class="row">
-	    <div class="col offset-l2 s12 m4 l8">
+	  <div class="row admin">
+	    <div class="col s12 m10 offset-m1 l8 offset-l2">
 		  <div id="tingkat2" class="section scrollspy">
 			  {{> highchartsHelper chartId="tingkat2chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat2Chart}}
 			  
@@ -94,8 +93,8 @@ Copyright 2016 TGS
 	    </div>
 	  </div>
 
-	  <div class="row">
-	    <div class="col offset-l2 s12 m4 l8">
+	  <div class="row admin">
+	    <div class="col s12 m10 offset-m1 l8 offset-l2">
 		  <div id="tingkat3" class="section scrollspy">
 			  {{> highchartsHelper chartId="tingkat3chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat3Chart}}
 			
@@ -103,8 +102,8 @@ Copyright 2016 TGS
 	    </div>
 	  </div>
 
-	  <div class="row">
-	    <div class="col offset-l2 s12 m4 l8">
+	  <div class="row admin">
+	    <div class="col s12 m10 offset-m1 l8 offset-l2">
 		  <div id="tingkat4" class="section scrollspy">
 			  {{> highchartsHelper chartId="tingkat4chart" chartWidth="100%" charHeight="100%" chartObject=hasilPemiraTingkat4Chart}}
 			  
@@ -112,8 +111,6 @@ Copyright 2016 TGS
 	    </div>
 	  </div>	
 
-	  	
-	{{>footer}}
     
    {{/if}}
 </template>	

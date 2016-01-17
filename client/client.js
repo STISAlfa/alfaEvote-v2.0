@@ -10,6 +10,7 @@ Template.loginM.events({
 	    		ada = Users.findOne({});
 	    		// Insert a task into the collection
 			    if (typeof(ada) == "object") {
+			    	Session.setPersistent('tipeUser', 'user');
 			      	Session.setPersistent('user', user);
 			      	Session.setPersistent('sudahLogin', true);
 			      	Session.setPersistent('angkatan', user[0]);
@@ -107,7 +108,7 @@ Template.result.helpers({
 		    plotShadow: false
 		},
 		title: {
-		    text: "Hasil Pemilihan Calon Ketua dan Wakil Ketua SEMA periode 2016-2017"
+		    text: "Hasil Pemilihan Ketua dan Wakil Ketua SEMA periode 2016-2017"
 		},
 		tooltip: {
 		    pointFormat: '<b>Suara : {point.y}</b>'
@@ -291,3 +292,70 @@ Template.result.helpers({
 Template.result.rendered = function(){
 	this.$('.scrollspy').scrollSpy();
 };
+
+Template.adminLogin.events({
+	"submit .login-form": function (event) {
+	    event.preventDefault();
+	    user = event.target.user.value;
+	    
+	    Meteor.subscribe('Admin',user,{
+	    	onReady: function () { 
+	    		ada = Admin.findOne({});
+	    		// Insert a task into the collection
+			    if (typeof(ada) == "object") {
+			    	Session.setPersistent('tipeUser', 'admin');
+			      	Session.setPersistent('user', user);
+			      	Session.setPersistent('sudahLogin', true);
+			      	Session.setPersistent('angkatan', '5');
+			      	Meteor.call('addLoginLog', user);
+			    	FlowRouter.go('result');}
+			    else{
+			    	event.target.user.value = "";
+			    	Session.setPersistent('erorLogin', 'invalid');
+			    	Materialize.toast('<div class="red-text" style="font-style: bold;font-weight: 900;"> Password Salah </div>', 4000, 'blue-grey darken-1');}
+	    	}
+	    });
+	}
+});
+
+Template.adminHome.rendered = function(){
+	var self = this;
+	self.$('.button-collapse').sideNav();
+	self.$('.collapsible').collapsible({
+    	accordion: false
+  	});
+  	self.$('.collapsible').collapsible();
+};
+
+Template.header.rendered = function(){
+	var self = this;
+	self.$('.button-collapse').sideNav();
+  	self.$('.collapsible').collapsible();
+  	self.$('.scrollspy').scrollSpy();
+};
+
+Template.header.events({
+	'click .data': function (event) {
+		FlowRouter.go('adminHome');
+	},
+	'click .result': function (event) {
+		FlowRouter.go('result');
+	},
+	'click .logout': function (event) {
+		event.preventDefault();
+		Session.setPersistent('sudahLogin',false);
+		Session.setPersistent('tipeUser','');
+		Session.setPersistent('user','');
+		FlowRouter.go('admin');
+	}
+});
+
+
+Template.registerHelper('cekTipeUser', function (tipeUser){
+	var regUser = Session.get('tipeUser');
+	//console.log(tipeUser);
+	if( regUser === tipeUser ){
+		return true;
+	}
+	return false;
+});

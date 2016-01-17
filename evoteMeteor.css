@@ -6,6 +6,20 @@ body{
     background-image: url('/img/footer_lodyas.png');
 }
 
+.admin{
+    padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+    .admin {
+        padding-left: 0;
+    }
+}
+
+nav .brand-logo{
+    padding-left: 30px;
+}
+
 #foter{
     color: white;
     opacity: 0.6;
@@ -37,7 +51,30 @@ body{
     color : white;
     text-align: center;
     margin:0 auto;
-    /*width: 1000px;*/
+}
+
+#project{
+    font-style: bold;
+    font-size: 30px;
+}
+
+ul.side-nav.fixed li a{
+    height: 40px;
+    line-height: 40px;
+}
+
+ul.side-nav.fixed li.stisalfa{
+    line-height: 35px;
+}
+
+.stisalfa{
+    text-align: center;
+    font-size: 15px;
+}
+
+.side-nav a{
+    font-size: 20px;
+    /*height: 40px;*/
 }
 
 .foto-calon{

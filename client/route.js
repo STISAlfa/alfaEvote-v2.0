@@ -1,16 +1,39 @@
+FlowRouter.route('/admin', {
+  name:'admin',
+  action() {
+    if (!Session.get('sudahLogin')) {
+      BlazeLayout.render("Main", {content: "adminLogin"});}
+    else{
+      FlowRouter.go('adminHome');}
+  }
+});
 
+FlowRouter.route('/admin/home',{
+  name: 'adminHome',
+  action(){
+    if(Session.get('sudahLogin') && Session.get('tipeUser')==='admin'){
+      BlazeLayout.render("Main", {content: "adminHome"});
+    }else{
+      FlowRouter.go('admin');
+    }
+  }
+});
 
 FlowRouter.route('/admin/result',{
   name: 'result',
   action(){
-    if(Session.get('sudahLogin')){
+    if(Session.get('sudahLogin') && Session.get('tipeUser') === 'admin'){
        Meteor.call('getVotingResult', function(err, data) {
-	  if (err)
-	    console.log(err);
-	  console.log(data);
-	  Session.setPersistent('VoteRes', data);
-	});
-       BlazeLayout.render("result");
+	     if (err)
+  	    console.log(err);
+  	  console.log(data);
+  	  Session.setPersistent('VoteRes', data);
+  	});
+       //BlazeLayout.render("result");
+      BlazeLayout.render("Main", {
+        content: "result",
+        resultPage: true
+      });
     }
     else{
       FlowRouter.go('/');
@@ -70,7 +93,8 @@ FlowRouter.route('/destroy', {
           Session.setPersistent('sudahVote', false);
           Session.setPersistent('sudahLogin', false);
           Session.setPersistent('erorLogin', 'validate');
-          Session.setPersistent('angkatan', 1);
+          Session.setPersistent('angkatan', null);
+          Session.setPersistent('tipeUser', '');
           Session.setPersistent('user', '');
           Users.remove({});
 
