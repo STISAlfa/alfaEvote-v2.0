@@ -74,3 +74,12 @@ label > div > input:checked + div { /* (RADIO CHECKED) IMAGE STYLES */
     background: url(../img/checked.png) green no-repeat;
     opacity: 1;
 }
+
+.result-card{
+    min-height: 632px;
+    max-height: 864px;
+    position: relative;
+    padding-bottom: 0px;
+    padding-top: 9rem;
+}
+

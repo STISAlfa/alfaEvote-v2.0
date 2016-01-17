@@ -80,3 +80,198 @@ Template.result.helpers({
        return Session.get('VoteRes').hasilAngkatan;
   }
 });
+
+
+Template.result.helpers({
+	hasilPemiraSemaChart : function() {
+	    return {
+		chart: {
+		    plotBackgroundColor: null,
+		    plotBorderWidth: null,
+		    plotShadow: false
+		},
+		title: {
+		    text: "Hasil Pemilihan Calon Ketua dan Wakil Ketua SEMA periode 2016-2017"
+		},
+		tooltip: {
+		    pointFormat: '<b>Suara : {point.y}</b>'
+		},
+		plotOptions: {
+		    pie: {
+		        allowPointSelect: true,
+		        cursor: 'pointer',
+		        dataLabels: {
+		            enabled: true,
+		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		            style: {
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		            },
+		            connectorColor: 'silver'
+		        }
+		    }
+		},
+		series: [{
+		    type: 'pie',
+		    name: 'hasil pemira sema',
+		    data: [
+		        ['Calon nomor 1',   45.0],
+		        ['Calon nomor 2',   55.0]
+		    ]
+		}]
+	    };
+	},
+	hasilPemiraTingkat1Chart : function() {
+	    return {
+		chart: {
+		    plotBackgroundColor: null,
+		    plotBorderWidth: null,
+		    plotShadow: false
+		},
+		title: {
+		    text: "Hasil Pemilihan Ketua Tingkat 1 periode 2016-2017"
+		},
+		tooltip: {
+		    pointFormat: '<b>Suara : {point.y}</b>'
+		},
+		plotOptions: {
+		    pie: {
+		        allowPointSelect: true,
+		        cursor: 'pointer',
+		        dataLabels: {
+		            enabled: true,
+		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		            style: {
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		            },
+		            connectorColor: 'silver'
+		        }
+		    }
+		},
+		series: [{
+		    type: 'pie',
+		    name: 'hasil pemira tingkat 1',
+		    data: [
+		        ['Calon nomor 1',   45.0],
+		        ['Calon nomor 2',   55.0]
+		    ]
+		}]
+	    };
+	},
+	hasilPemiraTingkat2Chart : function() {
+	    return {
+		chart: {
+		    plotBackgroundColor: null,
+		    plotBorderWidth: null,
+		    plotShadow: false
+		},
+		title: {
+		    text: "Hasil Pemilihan Ketua Tingkat 2 periode 2016-2017"
+		},
+		tooltip: {
+		    pointFormat: '<b>Suara : {point.y}</b>'
+		},
+		plotOptions: {
+		    pie: {
+		        allowPointSelect: true,
+		        cursor: 'pointer',
+		        dataLabels: {
+		            enabled: true,
+		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		            style: {
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		            },
+		            connectorColor: 'silver'
+		        }
+		    }
+		},
+		series: [{
+		    type: 'pie',
+		    name: 'hasil pemira tingkat 2',
+		    data: [
+		        ['Calon nomor 1',   45.0],
+		        ['Calon nomor 2',   55.0]
+		    ]
+		}]
+	    };
+	},
+	hasilPemiraTingkat3Chart : function() {
+	    return {
+		chart: {
+		    plotBackgroundColor: null,
+		    plotBorderWidth: null,
+		    plotShadow: false
+		},
+		title: {
+		    text: "Hasil Pemilihan Ketua Tingkat 3 periode 2016-2017"
+		},
+		tooltip: {
+		    pointFormat: '<b>Suara : {point.y}</b>'
+		},
+		plotOptions: {
+		    pie: {
+		        allowPointSelect: true,
+		        cursor: 'pointer',
+		        dataLabels: {
+		            enabled: true,
+		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		            style: {
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		            },
+		            connectorColor: 'silver'
+		        }
+		    }
+		},
+		series: [{
+		    type: 'pie',
+		    name: 'hasil pemira tingkat 3',
+		    data: [
+		        ['Calon nomor 1',   45.0],
+		        ['Calon nomor 2',   55.0]
+		    ]
+		}]
+	    };
+	},
+	hasilPemiraTingkat4Chart : function() {
+	    return {
+		chart: {
+		    plotBackgroundColor: null,
+		    plotBorderWidth: null,
+		    plotShadow: false
+		},
+		title: {
+		    text: "Hasil Pemilihan Ketua Tingkat 4 periode 2016-2017"
+		},
+		tooltip: {
+		    pointFormat: '<b>Suara : {point.y}</b>'
+		},
+		plotOptions: {
+		    pie: {
+		        allowPointSelect: true,
+		        cursor: 'pointer',
+		        dataLabels: {
+		            enabled: true,
+		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
+		            style: {
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		            },
+		            connectorColor: 'silver'
+		        }
+		    }
+		},
+		series: [{
+		    type: 'pie',
+		    name: 'hasil pemira tingkat 4',
+		    data: [
+		        ['Calon nomor 1',   1.0],
+		        ['Calon nomor 2',   2.0]
+		    ]
+		}]
+	    };
+	},
+
+});
+
+
+Template.result.rendered = function(){
+	this.$('.scrollspy').scrollSpy();
+};
