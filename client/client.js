@@ -24,10 +24,6 @@ Template.loginM.events({
   	}
 });
 
-Template.loginM.helpers('erorLogin',function(input){
-  return Session.get("erorLogin");
-});
-
 Template.voting.events({
 	'submit .VoteForm': function (event) {
 		event.preventDefault();
@@ -44,9 +40,11 @@ Template.voting.events({
 			Session.setPersistent('sudahVote', true);
 			Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan, function(err, data) {
 				if (err) console.log(err);
-			 	console.log('Sukses COK',kodeSema,kodeAngkatan);
+			 	else {
+			 		//console.log('Sukses COK',kodeSema,kodeAngkatan);
+			 		FlowRouter.go('thankyou'); 
+			 	}
 			});
-			//FlowRouter.go('thankyou'); 
 		}
 	},
 	'click #sema,#ketuatingkat':function(event){

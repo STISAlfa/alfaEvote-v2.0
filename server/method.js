@@ -1,7 +1,10 @@
 Meteor.methods({
 	addLoginLog: function(user){
 		if (LoginLog.find({user : user})){
-			LoginLog.update({user : user}, {loginAt: new Date()});
+			LoginLog.update({user : user}, {
+				user : user,
+				loginAt: new Date()
+			});
 		}
 		else{
 			LoginLog.insert({
@@ -18,6 +21,7 @@ Meteor.methods({
 	        waktuMilih: new Date() // current time
 	    });
 	    Users.update({user : user}, {
+	    	user : user,
 	    	sudahVote : true
 	    });
 	}
