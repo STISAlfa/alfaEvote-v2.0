@@ -128,7 +128,8 @@ Template.result.helpers({
 		            enabled: true,
 		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 		            style: {
-		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+		                fontSize: '18px'
 		            },
 		            connectorColor: 'silver'
 		        }
@@ -165,7 +166,8 @@ Template.result.helpers({
 		            enabled: true,
 		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 		            style: {
-		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+		                fontSize: '18px'
 		            },
 		            connectorColor: 'silver'
 		        }
@@ -203,7 +205,8 @@ Template.result.helpers({
 		            enabled: true,
 		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 		            style: {
-		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+		                fontSize: '18px'
 		            },
 		            connectorColor: 'silver'
 		        }
@@ -240,7 +243,8 @@ Template.result.helpers({
 		            enabled: true,
 		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 		            style: {
-		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+		                fontSize: '18px'
 		            },
 		            connectorColor: 'silver'
 		        }
@@ -277,7 +281,8 @@ Template.result.helpers({
 		            enabled: true,
 		            format: '<b>{point.name}</b>: {point.percentage:.1f} %',
 		            style: {
-		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
+		                color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black',
+		                fontSize: '18px'
 		            },
 		            connectorColor: 'silver'
 		        }
@@ -289,7 +294,7 @@ Template.result.helpers({
 		    data: [
 		        ['Calon nomor 1',   Session.get('VoteRes').hasilAngkatan[7]],
 		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[8]],
-		        ['Calon nomor 2',   Session.get('VoteRes').hasilAngkatan[9]]
+		        ['Calon nomor 3',   Session.get('VoteRes').hasilAngkatan[9]]
 		    ]
 		}]
 	    };

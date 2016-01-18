@@ -1,10 +1,10 @@
 FlowRouter.route('/admin', {
   name:'admin',
   action() {
-    if (!Session.get('sudahLogin')) {
+    if(Session.get('sudahLogin') && Session.get('tipeUser')==='admin'){
+      FlowRouter.go('result');}
+    else {
       BlazeLayout.render("Main", {content: "adminLogin"});}
-    else{
-      FlowRouter.go('adminHome');}
   }
 });
 
