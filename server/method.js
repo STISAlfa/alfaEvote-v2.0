@@ -14,16 +14,19 @@ Meteor.methods({
 		}
 	},
 	addVotingResult: function(user,kodeSema,kodeAngkatan){
-		VotingResult.insert({
-	        user: user,
-	        kodeSema : kodeSema,
-	        kodeAngkatan : kodeAngkatan,
-	        waktuMilih: new Date() // current time
-	    });
-	    Users.update({user : user}, {
-	    	user : user,
-	    	sudahVote : true
-	    });
+		if((typeof(Users.findOne({ "user": user, "sudahVote": false}))!='undefined')
+			&& (typeof(VotingResult.findOne({"user": user})) == 'undefined')){
+			VotingResult.insert({
+		        user: user,
+		        kodeSema : kodeSema,
+		        kodeAngkatan : kodeAngkatan,
+		        waktuMilih: new Date() // current time
+		    });
+		    Users.update({user : user}, {
+		    	user : user,
+		    	sudahVote : true
+		    });
+		}
 	},
 	getVotingResult: function(){
 		var VotingResultAll = {};

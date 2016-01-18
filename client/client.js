@@ -321,7 +321,7 @@ Template.adminLogin.events({
 	    Meteor.subscribe('Admin',user,{
 	    	onReady: function () { 
 	    		ada = Admin.findOne({});
-	    		// Insert a task into the collection
+	    		
 			    if (typeof(ada) == "object") {
 			    	Session.setPersistent('tipeUser', 'admin');
 			      	Session.setPersistent('user', user);
