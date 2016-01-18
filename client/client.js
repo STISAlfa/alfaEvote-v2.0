@@ -19,7 +19,7 @@ Template.loginM.events({
 			    else{
 			    	event.target.user.value = "";
 			    	Session.setPersistent('erorLogin', 'invalid');
-			    	Materialize.toast('<div class="white-text" style="font-style: bold;font-weight: 900;"> Password Salah </div>', 4000, 'red darken-3');}
+			    	Materialize.toast('<div class="white-text" style="font-style: bold;font-weight: 900;"> Password Tidak Dapat Digunakan </div>', 4000, 'red darken-3');}
 	    	}
 	    });
   	}
@@ -40,7 +40,9 @@ Template.voting.events({
 		else {
 			Session.setPersistent('sudahVote', true);
 			Meteor.call('addVotingResult', user,kodeSema,kodeAngkatan, function(err, data) {
-				if (err) console.log(err);
+				if (err) {
+					console.log(err);
+				}
 			 	else {
 			 		//console.log('Sukses COK',kodeSema,kodeAngkatan);
 			 		FlowRouter.go('thankyou'); 
@@ -54,7 +56,11 @@ Template.voting.events({
 		
 		if ((typeof kodeSema != 'undefined') && (typeof kodeAngkatan != 'undefined'))
 		{
-			$( ".btn-large" ).removeClass( "disabled" )
+			$( ".btn-large" ).removeClass( "red" );
+			$( ".btn-large" ).addClass( "green" );
+			$( "#icons" ).removeClass( "mdi-content-block" );
+			$( "#icons" ).addClass( "mdi-action-done-all" );
+			//$( "#icons" ).addClass( "green" );
 		}
 	}
 });

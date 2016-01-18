@@ -78,8 +78,7 @@ FlowRouter.route('/thankyou', {
 
           FlowRouter.go('home');
         }
-        Meteor.setTimeout(dos, 10000);
-        Users.remove({});
+        Meteor.setTimeout(dos, 8000);
       }
      else {
         FlowRouter.go('vote');
@@ -96,8 +95,7 @@ FlowRouter.route('/destroy', {
           Session.setPersistent('angkatan', null);
           Session.setPersistent('tipeUser', '');
           Session.setPersistent('user', '');
-          Users.remove({});
-
+          
           FlowRouter.go('home');
   }
 });
